@@ -1,24 +1,24 @@
 # CDSWTCHR (CodeSwitcher)
 ### Asynchronous, Zero-Nag Workflow Infrastructure & Priority Router
 
-**Live Link:** https://cdswtchr-1033524947512.us-west1.run.app/
+**Live Link:** https://cdswtchr-1033524947512.us-west1.run.app/  
 **Status:** Live Production | Monitored via continuous dogfooding validation
 
 ---
 
-## 💡 Why I Built This: The Anti-“Tamagotchi” Approach
+## 👾 Why I Built This: The Anti-“Tamagotchi” Approach
 
 Most modern task apps treat you like an irresponsible kid looking after a digital pet. They force you to do a ton of useless data entry—making you tag, color-code, and schedule a task before you can even type it out. Then, if you miss a deadline, the app guilt-trips you by breaking your "streak" or flooding your screen with annoying reminders.
 
 `CDSWTCHR` does the opposite. Built out of pure frustration with rigid, cartoonish time-blocking apps, this tool runs on a simple rule: **Focus first, log it later.** It is designed to be a simple, stress-free notebook that tracks your actual work retroactively. You stay in control of your data, and the app never judges your schedule.
 
-### 📊 Product Positioning & State Architecture
+### 🎲 Product Positioning & State Architecture
 
 Unlike legacy task management software that relies heavily on behavioral policing, metric-shaming gamification, and rigid, immutable data frames, CDSWTCHR is architected as a passive, asynchronous workflow ledger. Standard frameworks—such as the traditional Eisenhower Matrix—mistakenly assume a multi-tiered corporate hierarchy built on delegation. CDSWTCHR intentionally guts this overhead, engineering a bounded priority grid optimized exclusively for a team of one. Rather than locking down parameters post-deadline or enforcing fixed, unyielding focus increments, the underlying application logic permits fully retroactive time logging and implements completely decoupleable, adaptive micro-focus intervals (15m, 20m, or 25m splits) to match the real-time cognitive bandwidth of the operator.
 
 ---
 
-## 🛠️ How It Works
+## 🧰 How It Works
 
 ### 1. The Bounded Priority Grid
 Standard to-do lists get paralyzing because every single item looks equally important. This grid fixes that by breaking things down visually based on real time limits.
@@ -37,7 +37,7 @@ Accessibility shouldn't require downloading messy third-party browser extensions
 
 ---
 
-## 🔒 App Limits & Privacy Boundaries
+## ⏳ App Limits & Privacy Boundaries
 
 To keep cloud costs low and protect your private data, I built three strict limits directly into the system:
 
@@ -47,16 +47,18 @@ To keep cloud costs low and protect your private data, I built three strict limi
 
 ---
 
-## 🚀 The Tech Stack
+## ☰ The Tech Stack
 
 * **Where It Lives:** Deployed on **Google Cloud Run**. This environment runs the app inside lightweight containers and automatically scales up or down based on activity metrics.
 * **The AI Engine:** Leveraged the **Google AI Studio ecosystem** to minimize infrastructure middleware, maximizing development velocity and ensuring native compatibility with containerized deployment paths.
 
 ---
 
-## 🗺️ What's Next (The 3-Week Plan)
+## ▶▶ What's Next (The 3-Week Plan)
 
 I want to avoid "feature creep" (adding endless tools until the app gets bloated). The next 3 weeks are all about refining what's already there:
 
 * **Active Testing:** I am currently dogfooding the live system to see how well the AI parses incredibly sloppy handwriting and muffled audio recordings.
 * **Better Language Translations:** Making sure the entire interface translates perfectly into **French, Spanish, and Portuguese**, with two more common languages coming next. This ensures anyone using English as a second language or balancing schedules across borders isn't locked out.
+
+```
