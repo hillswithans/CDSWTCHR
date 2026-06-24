@@ -61,4 +61,12 @@ I want to avoid "feature creep" (adding endless tools until the app gets bloated
 * **Active Testing:** I am currently dogfooding the live system to see how well the AI parses incredibly sloppy handwriting and muffled audio recordings.
 * **Better Language Translations:** Making sure the entire interface translates perfectly into **French, Spanish, and Portuguese**, with two more common languages coming next. This ensures anyone using English as a second language or balancing schedules across borders isn't locked out.
 
+---
+
+## 📅 Revision History & Changelog
+
+### **June 23, 2026**
+*   **Global Localization Expansion (Hindi `HI`):** Integrated native Hindi language support across the entire interface. Recognizing Hindi as one of the most widely spoken languages globally—and a primary language for a massive demographic of international tech professionals—this update bridges a critical accessibility gap, ensuring intuitive navigation, localized time-blocking semantics, and accurate microcopy rendering.
+*   **Dynamic Viewport Typography Scaling Toggle:** Engineered an on-page text scaling toggle directly into the header workspace. Operators can dynamically scale page-specific typography between a **10pt minimum** (for high-density matrix scanning) and a **17pt maximum** (to alleviate visual fatigue and support low-vision or dyslexic users), bypassing rigid browser-level zoom configurations that disrupt layout grids.
+
 ```
