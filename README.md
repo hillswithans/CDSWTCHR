@@ -37,7 +37,7 @@ Accessibility shouldn't require downloading messy third-party browser extensions
 
 ---
 
-## ⏳ App Limits & Privacy Boundaries
+## ✋App Limits & Privacy Boundaries
 
 To keep cloud costs low and protect your private data, I built three strict limits directly into the system:
 
@@ -54,7 +54,7 @@ To keep cloud costs low and protect your private data, I built three strict limi
 
 ---
 
-## ▶▶ What's Next (The 3-Week Plan)
+## 🔜 What's Next (The 3-Week Plan)
 
 I want to avoid "feature creep" (adding endless tools until the app gets bloated). The next 3 weeks are all about refining what's already there:
 
