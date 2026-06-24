@@ -63,7 +63,7 @@ I want to avoid "feature creep" (adding endless tools until the app gets bloated
 
 ---
 
-## 📅 Revision History & Changelog
+## 🔄 Revision History & Changelog
 
 ### **June 23, 2026**
 *   **Global Localization Expansion (Hindi `HI`):** Integrated native Hindi language support across the entire interface. Recognizing Hindi as one of the most widely spoken languages globally—and a primary language for a massive demographic of international tech professionals—this update bridges a critical accessibility gap, ensuring intuitive navigation, localized time-blocking semantics, and accurate microcopy rendering.
