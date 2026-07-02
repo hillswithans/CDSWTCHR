@@ -66,6 +66,7 @@ I want to avoid "feature creep" (adding endless tools until the app gets bloated
 *   **Cross-Device Audio Syncing:** Polishing state serialization to ensure in-progress voice memo states and playback queue positions persist smoothly across desktop-to-mobile viewport handoffs.
 
 ---
+![demo](assets/demo-nebula.gif)
 
 ## 🔄 Revision History & Changelog
 
