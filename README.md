@@ -91,7 +91,7 @@ The system is built to forget things quickly on purpose.
 
 ---
 
-## 🔜 What’s Next (3-Week Focus)
+## 🔜 What’s Next (1-Week Focus)
 
 No feature creep. Just refinement and stability.
 
