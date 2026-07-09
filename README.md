@@ -1,188 +1,407 @@
 # CDSWTCHR (CodeSwitcher)
 
-### Asynchronous, Zero-Nag Workflow Infrastructure & Priority Router
+## Asynchronous, Zero-Nag Workflow Infrastructure & Priority Router
 
-- **Live Link:** https://cdswtchr-1033524947512.us-west1.run.app/
-- **Status:** Live Production | Monitored via continuous dogfooding validation
+**Live Application:** https://cdswtchr-1033524947512.us-west1.run.app/  
+**Status:** Live Production | Validated through continuous dogfooding and workflow testing
 
 ---
 
-## Why I Built This: The Anti-"Tamagotchi" Approach
+# Why I Built This: The Anti-"Tamagotchi" Approach
 
-Most modern task apps treat you like an irresponsible kid looking after a digital pet. They force you into useless data entry rituals, tagging, color-coding, scheduling, before you've even had the chance to think.
+Most modern productivity apps treat users like irresponsible caretakers of a digital pet.
 
-Then, if you miss a deadline, they punish you with streak loss or a screen full of passive-aggressive reminders.
+They require endless setup rituals: tagging, color coding, scheduling, and organizing before any real work begins.
+
+Then, when reality happens, they punish users with missed streaks, reminder overload, and increasingly aggressive notifications.
 
 CDSWTCHR does the opposite.
 
-Built out of pure frustration with rigid, cartoonish time-blocking systems, it runs on one rule:
+Built from frustration with rigid productivity systems and artificial planning rituals, it follows one principle:
 
-**Focus first, log it later.**
+> **Focus first. Log it later.**
 
-It's designed to be a stress-free notebook for actual human attention, messy, nonlinear, and occasionally brilliant at inconvenient times. You stay in control of your data, and nothing in the system judges your schedule.
+CDSWTCHR is designed as a stress-free workflow ledger for real human attention: messy, nonlinear, and occasionally brilliant at inconvenient times.
 
----
+Users remain in control of their data. The system does not judge schedules or force productivity habits.
 
-## Product Positioning & State Architecture
-
-Most task systems quietly assume you're managing a team, a hierarchy, or a version of yourself that enjoys planning spreadsheets at 8pm.
-
-This doesn't.
-
-CDSWTCHR is a passive, asynchronous workflow ledger built around:
-
-- A **four-quadrant Eisenhower grid**, sorting tasks by urgency and importance rather than a single flat priority score
-- **Retroactive time logging** instead of upfront planning theatre
-- Flexible focus intervals (default 25 min work / 5 min break, adjustable to 15 or 20 min sessions)
-- Decoupled task states that don't collapse when reality gets messy (as it tends to do)
-
-It doesn't try to control your workflow. It just stops it from turning into noise.
+It simply reduces noise.
 
 ---
 
-## How It Works
+# Product Architecture & Workflow Philosophy
 
-### 1. The Eisenhower Priority Grid
+Most task systems assume users are managing teams, projects, or perfectly organized versions of themselves.
 
-A simple spatial system that stops everything from shouting "urgent" at the same volume. Tasks are sorted by two metrics: urgency and importance.
+CDSWTCHR is built differently.
 
-- **Q1: Urgent & Important (Do First)** — high-impact tasks with hard deadlines or sudden crises. Requires attention today, and delaying has direct consequences. Think: a system outage, a presentation due in two hours, a client emergency.
-- **Q2: Important, Not Urgent (Plan / Schedule)** — long-term growth and strategy work with no ticking clock. Spending more time here is what keeps things from turning into Q1 fires later. Think: exercise, learning a skill, long-term project planning.
-- **Q3: Urgent, Not Important (Delegate / Minimize)** — noise and interruptions that feel pressing but don't align with your actual priorities. Automate, delegate, or batch these during low-energy stretches. Think: most phone calls, non-essential email, status meetings.
-- **Q4: Neither (Eliminate / Drop)** — low-value activities that eat time and energy for no real return. Limit, postpone, or delete. Think: mindless scrolling, over-sorting archives, busywork.
-- **Backlog** — quick-capture staging for anything ingested via voice or photo. Nothing gets forced into a quadrant on the way in; you drag it into place when you're ready to plan.
-- Trello-style columns without the managerial overhead, built for solo operators
+It is a passive, asynchronous workflow system centered around:
 
-### 2. Frictionless Ingestion
+- A four-quadrant Eisenhower Decision Matrix instead of a single priority score
+- Retroactive time logging instead of forced upfront planning
+- Flexible focus sessions instead of rigid scheduling
+- Decoupled task states that remain stable when reality becomes unpredictable
 
-Because stopping your flow just to write a perfect task description is not the move.
+The goal is not to control workflow.
 
-- **AI Photo Reader:** turns sticky notes, whiteboards, and chaotic screenshots into structured tasks
-- **Voice Memos:** speak, transcribe, AI parses, inbox staging for review
-
-### 3. Voice and Multilingual Support
-
-- **Cloud-based multilingual TTS**: speaks tasks, notifications, and headers aloud using Gemini's native voice system (migrated off browser speechSynthesis for reliability and audio chunking)
-- **Custom voice tuning per language** for a natural, warm cadence rather than a flat robotic read
-- **Full localization** across English, Spanish, French, Portuguese, Hindi, and Arabic (with native RTL support)
-
-### 4. The Focus Timer
-
-An integrated timer for actually executing what's sitting in your quadrants.
-
-- **Focus sessions:** 25 minutes of deep, uninterrupted work by default, adjustable to 15 or 20 minute sessions
-- **Rest breaks:** 5 minutes between sessions to prevent burnout
-- **Audio cues:** natural voice synthesis announces session start, break time, and completion, so you don't have to keep glancing at a screen
-
-### 5. The 48-Hour Auto-Archive
-
-Keeps your active board from turning into a graveyard of finished tasks.
-
-- Completed tasks stay visible on the board for review
-- After 48 hours, they migrate automatically into chronological Cycle Archives
-- Your active grid stays focused on what's current, while your full completion history is still there for review later
-
-### 6. Built-In Accessibility
-
-Not bolted on after the fact. Actually designed in.
-
-- High-contrast monochrome mode for clarity and reduced fatigue
-- Dyslexia-aware typography with tuned spacing and weight
-- Header-level typography scaling (10pt to 17pt) that avoids browser zoom distortion
-- Reduced visual clutter so nothing competes for attention
+The goal is to prevent workflow from becoming noise.
 
 ---
 
-## App Limits & Privacy Boundaries
+# Core Features
 
-These aren't arbitrary constraints. They keep the system fast, stable, and quietly sane at scale.
+## 1. Eisenhower Priority Matrix
 
-- **30-second voice cap** on live memos
-- **No raw audio uploads** (keeps backend lean and predictable)
-- **72-hour auto-delete** for all raw photos and voice clips
+Tasks are organized by urgency and importance.
 
-The system is built to forget things quickly on purpose.
+### Q1: Urgent & Important — Do First
+
+High-impact tasks requiring immediate attention.
+
+Examples:
+- System outages
+- Critical deadlines
+- Emergency issues
+
+### Q2: Important, Not Urgent — Plan
+
+Long-term growth and strategic work.
+
+Examples:
+- Learning new skills
+- Exercise
+- Long-term projects
+
+### Q3: Urgent, Not Important — Minimize
+
+Interruptions that feel urgent but do not align with priorities.
+
+Examples:
+- Non-essential meetings
+- Routine requests
+- Administrative noise
+
+### Q4: Neither — Eliminate
+
+Low-value activities consuming time and energy.
+
+Examples:
+- Busywork
+- Excessive organization
+- Low-value tasks
+
+### Backlog Capture
+
+A staging area for quick inputs.
+
+Tasks captured through voice or images are not forced into a category immediately. Users decide placement when they are ready.
 
 ---
 
-## Tech Stack
+# Frictionless Task Ingestion
 
-- **Where it lives:** Google Cloud Run (containerized, auto-scaling)
-- **AI engine:** Google AI Studio ecosystem (minimal middleware, faster iteration)
+CDSWTCHR removes the need to stop working just to create a perfectly formatted task.
+
+## AI Photo Reader
+
+Transforms:
+
+- Sticky notes
+- Whiteboards
+- Screenshots
+- Handwritten notes
+
+into structured tasks.
+
+## Voice Memo Capture
+
+Users can speak naturally.
+
+The system:
+
+1. Records input
+2. Transcribes speech
+3. Uses AI processing to structure tasks
+4. Places results into an inbox for review
 
 ---
 
-## What's Next (1-Week Focus)
+# Voice, Localization & Accessibility
 
-No feature creep. Just refinement and stability.
+## Multilingual Audio System
 
-- **Target Release:** July 8, 2026
-- Improved audio feedback systems
-- Accessibility visual refinement pass
-- Cross-device audio state syncing (desktop to mobile)
-- Better resilience for messy inputs (bad handwriting, low-quality audio, real-world chaos)
+CDSWTCHR uses cloud-based multilingual text-to-speech with Gemini-powered voice generation.
+
+Features:
+
+- Natural voice cadence tuning
+- Localized task announcements
+- Audio workflow feedback
+- Language-specific voice handling
+
+Supported languages:
+
+- English
+- Spanish
+- French
+- Portuguese
+- Hindi
+- Arabic
+- German
+- Italian
+
+Arabic includes native RTL support.
 
 ---
 
-## Revision History & Changelog
+# Advanced Streaming TTS Engine
+
+The audio system was redesigned in:
+
+`src/lib/audioManager.ts`
+
+to implement sequential streaming playback.
+
+## Zero Initial Latency
+
+Audio begins immediately after the first chunk is fetched and decoded.
+
+Additional chunks load asynchronously in the background.
+
+## Precise Playback Scheduling
+
+Future audio segments are scheduled through the Web Audio API timeline to maintain smooth, gapless playback.
+
+## Click Prevention
+
+Each chunk applies a short 5ms fade-in and fade-out transition to prevent audio artifacts between segments.
+
+## Robust Cancellation
+
+Playback uses:
+
+- `activeCallToken`
+- `AbortController`
+
+When interrupted:
+
+- Pending fetch requests are cancelled
+- Scheduled audio nodes are cleared
+- Current playback stops immediately
+
+## Error Recovery
+
+If a streaming chunk fails:
+
+- Playback stops gracefully
+- Successful audio remains preserved
+- The system avoids unnecessary full fallback behavior
+
+---
+
+# Focus Timer
+
+An integrated execution system for completing tasks.
+
+Features:
+
+- Default 25-minute focus sessions
+- Adjustable 15 and 20-minute sessions
+- 5-minute recovery breaks
+- Voice announcements for:
+  - Session start
+  - Break periods
+  - Completion states
+
+Users can execute tasks without constantly monitoring the screen.
+
+---
+
+# Analytics Dashboard
+
+CDSWTCHR includes productivity analysis tools.
+
+Features:
+
+- Daily performance ratios
+- Historical completion tracking
+- Focus session analysis
+- Productivity trend visualization
+
+---
+
+# 48-Hour Auto Archive System
+
+Completed tasks remain visible temporarily for review.
+
+After 48 hours:
+
+- Tasks move automatically into chronological Cycle Archives
+- Active boards remain focused
+- Completion history remains available
+
+---
+
+# Accessibility System
+
+Accessibility was designed into the foundation rather than added afterward.
+
+Features:
+
+- High-contrast monochrome mode
+- Dynamic contrast recalculation
+- Dyslexia-aware typography adjustments
+- Adjustable header typography scaling (10pt–17pt)
+- Reduced visual clutter
+- Screen-reader-friendly workflows
+
+---
+
+# Application Limits & Privacy Boundaries
+
+CDSWTCHR intentionally limits stored raw inputs.
+
+Constraints:
+
+- 30-second maximum voice memo length
+- No raw audio uploads
+- Raw photos and voice clips automatically deleted after 72 hours
+
+The system is designed to remember what matters and forget what does not.
+
+---
+
+# Technical Stack
+
+## Deployment
+
+- Google Cloud Run
+- Containerized deployment
+- Auto-scaling infrastructure
+
+## AI Platform
+
+- Google AI Studio ecosystem
+
+## Application Systems
+
+- Interactive drag-and-drop workflow board
+- Localization framework
+- Audio lifecycle management
+- Analytics visualization systems
+
+---
+
+# Release Milestones & Changelog
 
 ![demo](assets/demo-nebula.gif)
 
----
+## July 8, 2026 — Localization Expansion & Feedback Infrastructure
 
-### July 3, 2026 — Layout & Interaction Refinement
+### Globalization Expansion
 
-**UI Simplification**
-- Stripped heavy container framing from header modules
-- Replaced with lightweight, borderless icon interactions
-- Reduced visual density without losing function
+- Added full German (`de`) localization support across core workflows
+- Added full Italian (`it`) localization support across UI components and datetime formatting
+- Expanded multilingual consistency across task management, analytics, and audio systems
 
-**Header Restructure**
-- Aligned real-time clock with "Pair Devices" on a single axis
-- Collapsed full timestamp into a hover-reveal micro interaction
+### Feedback System Integration
 
-**Focus Engine Compression**
-- Merged focus label and countdown into one cohesive module
-- Grouped controls into a compact media-style cluster
-- Reduced vertical footprint by ~35%
+- Added in-app feedback submission workflow powered by Tally
+- Integrated dedicated feedback access directly into application navigation
+- Created a streamlined method for collecting user input without interrupting workflow
 
-**Voice Capture Expansion**
-- Expanded active recording surface for better interaction fidelity
-- Reduced padding to maximize usable input space
+### Product Refinement
 
-**Accessibility + Audio Systems**
-- High-luminance theme override for accessibility mode
-- Improved dyslexia readability via spacing and weight tuning
-- Conditional UI mounting removes redundant controls in accessibility state
-- TTS engine isolated from rendering lifecycle to prevent accidental triggers
-- Migrated from browser TTS to cloud-based multilingual voice system
-- Added localized voice support: EN / ES / FR / PT / HI
+- Continued improving CDSWTCHR as a globally accessible productivity system
+- Improved communication between users and ongoing development
 
 ---
 
-### July 2, 2026 — Accessibility & Voice Engine Upgrade
+## July 3, 2026 — Layout & Interaction Refinement
 
-**Visual System**
-- Introduced high-contrast accent system (`#00A3FF`)
-- Added explicit "A" accessibility glyph for instant recognition
-- Dynamic contrast recalculation across theme states
+### UI Simplification
+
+- Removed heavy container framing from header modules
+- Replaced dense layouts with lightweight interactions
+- Reduced visual density while preserving functionality
+
+### Header Restructure
+
+- Aligned real-time clock with Pair Devices controls
+- Converted timestamp display into hover-based micro interaction
+
+### Focus Engine Improvements
+
+- Combined focus label and countdown into one module
+- Reduced vertical footprint by approximately 35%
+
+### Voice Capture Expansion
+
+- Increased recording interaction surface
+- Improved input accessibility
+
+### Audio & Accessibility Improvements
+
+- Added high-luminance accessibility theme
+- Improved dyslexia readability through spacing and weight adjustments
+- Isolated TTS engine from rendering lifecycle
+- Migrated from browser speech synthesis to cloud multilingual voice generation
+
+---
+
+## July 2, 2026 — Accessibility & Voice Engine Upgrade
+
+### Visual System
+
+- Added accessibility indicator
+- Added dynamic accent handling
 - Improved layout stability under scaling
 
-**Voice System**
-- Play/pause controls for memo playback
-- System voice cues for recording start/stop, processing state, successful ingestion, and task removal feedback
-- Inline audio previews for AI-parsed tasks
+### Voice System
+
+- Added playback controls
+- Added recording and processing voice cues
+- Added inline AI task audio previews
 - Unified translation schema across UI and audio metadata
 
 ---
 
-### June 23, 2026 — Localization & Typography Controls
+## June 23, 2026 — Localization & Typography Controls
 
-**Globalization**
-- Added native Hindi support across core workflows
-- Improved multilingual consistency across UI and audio systems
+### Globalization
 
-**Typography Controls**
-- Header-level scaling (10pt–17pt range)
-- Designed to avoid browser zoom distortion
-- Supports both dense scanning and low-vision readability modes
+- Added Hindi language support
+- Improved multilingual consistency across workflows
+
+### Typography
+
+- Added header-level scaling controls
+- Improved readability across accessibility modes
+
+---
+
+# Current Development Focus
+
+## July 2026 Refinement Goals
+
+Focus remains on stability, accessibility, and refinement.
+
+Upcoming improvements:
+
+- Improved audio feedback systems
+- Accessibility visual refinement
+- Cross-device audio state synchronization
+- Better resilience for messy inputs:
+  - Poor handwriting
+  - Low-quality audio
+  - Real-world notes and interruptions
+
+---
+
+# Feedback
+
+A dedicated feedback submission workflow is available inside the application.
+
+Feedback platform:
+
+https://tally.so/r/vGb88X
